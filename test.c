@@ -3,15 +3,17 @@
 
 int main(){
     clock_t start, end;
+    int total = 200000000;
     start = clock();
     printf("start time: %ld\n", start);
-    int total = 20000000;
+    total = 1000000000;
+    long a = 0;
     for(int i=0;i<total;i++){
-        //total--;
+        a+=i;
     }
     end = clock();
     printf("end time: %ld\n", end);
-    long cost = end - start;
-    printf("cost time: %ld\n",cost);
+    double cost = (double)(end - start)/CLOCKS_PER_SEC;
+    printf("cost time: %lf\n",cost);
     return 0;
 }
